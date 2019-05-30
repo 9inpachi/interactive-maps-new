@@ -20,30 +20,33 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Maps.MapTesting.Points.Islamabad.WebHome" locale="">
-  <web>Maps.MapTesting.Points.Islamabad</web>
-  <name>WebHome</name>
+<xwikidoc version="1.3" reference="Maps.MapTesting.Points.ParisMarker" locale="">
+  <web>Maps.MapTesting.Points</web>
+  <name>ParisMarker</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <parent>Maps.MapTesting.Points.Islamabad</parent>
+  <parent>Maps.MapTesting.Points.Islamabad.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>Islamabad</title>
+  <title>ParisMarker</title>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>false</hidden>
-  <content>=== Some data to be inside the popup ===
+  <content>===== Some Data =====
 
-Some testing</content>
+(% class="box warningmessage" %)
+(((
+Some information here
+)))</content>
   <object>
-    <name>Maps.MapTesting.Points.Islamabad.WebHome</name>
+    <name>Maps.MapTesting.Points.ParisMarker</name>
     <number>0</number>
     <className>Maps.Code.Point.PointClass</className>
-    <guid>14b01bbf-ebf2-4906-902e-9186d440b410</guid>
+    <guid>18af6ec0-cd68-4711-9cb6-81d4da60300a</guid>
     <class>
       <name>Maps.Code.Point.PointClass</name>
       <customClass/>
@@ -69,7 +72,7 @@ Some testing</content>
       </location>
     </class>
     <property>
-      <location>34,33</location>
+      <location>paris</location>
     </property>
   </object>
 </xwikidoc>

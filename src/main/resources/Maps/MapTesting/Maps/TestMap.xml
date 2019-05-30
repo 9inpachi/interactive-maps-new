@@ -20,9 +20,9 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Maps.MapTesting.Maps.Map Islamabad" locale="">
+<xwikidoc version="1.3" reference="Maps.MapTesting.Maps.TestMap" locale="">
   <web>Maps.MapTesting.Maps</web>
-  <name>Map Islamabad</name>
+  <name>TestMap</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
@@ -38,10 +38,10 @@
   <hidden>false</hidden>
   <content/>
   <object>
-    <name>Maps.MapTesting.Maps.Map Islamabad</name>
+    <name>Maps.MapTesting.Maps.TestMap</name>
     <number>0</number>
     <className>Maps.Code.Map.MapClass</className>
-    <guid>6d878a1c-dca2-4c73-a85f-5cbb6bfa76a8</guid>
+    <guid>8a062640-0790-44d9-aa10-9984d923dcd6</guid>
     <class>
       <name>Maps.Code.Map.MapClass</name>
       <customClass/>
@@ -139,7 +139,7 @@
       </tiles>
     </class>
     <property>
-      <defaultLocation/>
+      <defaultLocation>Paris</defaultLocation>
     </property>
     <property>
       <defaultZoom/>
@@ -151,7 +151,7 @@
       <includeSearch>1</includeSearch>
     </property>
     <property>
-      <query>object:Maps.Code.Point.PointClass</query>
+      <query>doc.space = "Points" AND object:Maps.Code.Point.PointClass</query>
     </property>
     <property>
       <tiles/>

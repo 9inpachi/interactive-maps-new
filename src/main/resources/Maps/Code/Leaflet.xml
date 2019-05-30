@@ -35,7 +35,7 @@
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
+  <hidden>true</hidden>
   <content/>
   <object>
     <name>Maps.Code.Leaflet</name>
@@ -145,9 +145,10 @@ define('leaflet-commons', ['jquery'], function ($) {
           mapId = 'map-' + options.id,
           zoom = options.defaultZoom !== null ? options.defaultZoom : 12,
           tiles = options.tiles !== '' ? options.tiles : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-          defaultLoc = options.defaultLocation !== '' ? options.defaultLocation : '48,2';
+          defaultLoc = options.defaultLocation !== '' ? options.defaultLocation : '48,2',
+          map = new L.Map(mapId, {zoom: zoom, center: [48, 2]});
       this.getLocationCoords(defaultLoc, function (location) {
-        var map = new L.Map(mapId, {zoom: zoom, center: location});
+        map.setView(location);
         //Add a tiles layer to the map (the background)
         L.tileLayer(tiles, {
           attribution: '&amp;copy; &lt;a href="https://www.openstreetmap.org/"&gt;OpenStreetMap&lt;/a&gt; | &lt;a href="https://www.xwiki.org"&gt;XWiki&lt;/a&gt;',
@@ -162,8 +163,8 @@ define('leaflet-commons', ['jquery'], function ($) {
         if (options.includeSearch == 1) {
           rootScope.addSearch(map);
         }
-        return map;
       });
+      return map;
     },
 
     //Remove the old marker and add a new one
@@ -464,11 +465,7 @@ define('leaflet-commons', ['jquery'], function ($) {
       <cache>long</cache>
     </property>
     <property>
-      <code>#macro( xwikiToHtml $xwiki )
-  #set ($xdom = $services.rendering.parse($xwiki, "xwiki/2.1"))
-  $services.rendering.render($xdom, "xhtml/1.0")
-#end
-requirejs.config({
+      <code>requirejs.config({
   paths: {
     'leaflet': ['$services.webjars.url("leaflet", "leaflet.js")'],
     'leafletSearch': ['https://cdn.jsdelivr.net/npm/leaflet-search@2.9.8/src/leaflet-search'] //To be used as a webjar
@@ -487,8 +484,8 @@ require(['jquery', 'leaflet', 'leafletSearch', 'leaflet-commons'], function ($, 
       var map = leafletCommons.createEmptyMap(options);
       var mapData = JSON.parse(element.dataset.mapdata);
       mapData.each(function (data) {
-        leafletCommons.getLocationCoords(data["property.Maps.Code.Point.PointClass.location_string"][0], function (location) {
-          //L.marker(location).bindPopup("sadasd").addTo(map);
+        leafletCommons.getLocationCoords(data.location, function (location) {
+          L.marker(location).bindPopup(data.popupContent).addTo(map);
         });
       });
     });

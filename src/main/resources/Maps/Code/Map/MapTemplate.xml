@@ -34,7 +34,7 @@
   <title/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
+  <hidden>true</hidden>
   <content/>
   <object>
     <name>Maps.Code.Map.MapTemplate</name>
