@@ -60,7 +60,7 @@
     &lt;input type="hidden" name="template" value="Maps.Code.Map.MapTemplate"/&gt;
     &lt;input type="hidden" name="sheet" value="1"/&gt;
     &lt;input type="hidden" name="spaceName" value="Maps.MapTesting.Maps"/&gt;
-    &lt;label for="mapName"&gt;Map Name&lt;/label&gt;
+    &lt;label for="mapName"&gt;Map&lt;/label&gt;
     &lt;input type="text" id="mapName" name="mapName" value="Enter the map name" class="withTip" size="50"/&gt;
     &lt;input type="submit" value="Create Map" class="btn btn-primary"/&gt;
   &lt;/form&gt;

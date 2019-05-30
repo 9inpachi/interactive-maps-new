@@ -52,20 +52,20 @@
     <defaultWeb/>
     <nameField/>
     <validationScript/>
-    <coordinates>
+    <location>
       <customDisplay/>
       <disabled>0</disabled>
-      <hint/>
-      <name>coordinates</name>
+      <hint>Location in coordinates or place name</hint>
+      <name>location</name>
       <number>1</number>
-      <picker>1</picker>
-      <prettyName>coordinates</prettyName>
+      <picker>0</picker>
+      <prettyName>Location</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </coordinates>
+    </location>
   </class>
   <object>
     <name>Maps.Code.Point.PointClass</name>

@@ -20,9 +20,9 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Maps.MapTesting.Maps.New Map" locale="">
+<xwikidoc version="1.3" reference="Maps.MapTesting.Maps.Map Islamabad" locale="">
   <web>Maps.MapTesting.Maps</web>
-  <name>New Map</name>
+  <name>Map Islamabad</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
@@ -38,10 +38,10 @@
   <hidden>false</hidden>
   <content/>
   <object>
-    <name>Maps.MapTesting.Maps.New Map</name>
+    <name>Maps.MapTesting.Maps.Map Islamabad</name>
     <number>0</number>
     <className>Maps.Code.Map.MapClass</className>
-    <guid>a7248c54-4146-4f5c-a464-9f25d0bedf9c</guid>
+    <guid>6d878a1c-dca2-4c73-a85f-5cbb6bfa76a8</guid>
     <class>
       <name>Maps.Code.Map.MapClass</name>
       <customClass/>
@@ -51,14 +51,28 @@
       <defaultWeb/>
       <nameField/>
       <validationScript/>
+      <defaultLocation>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint>Location to which the map will open to</hint>
+        <name>defaultLocation</name>
+        <number>6</number>
+        <picker>0</picker>
+        <prettyName>Default Location</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </defaultLocation>
       <defaultZoom>
         <customDisplay/>
         <disabled>0</disabled>
-        <hint/>
+        <hint>The zoom which the map will open to</hint>
         <name>defaultZoom</name>
         <number>1</number>
         <numberType>long</numberType>
-        <prettyName>defaultZoom</prettyName>
+        <prettyName>Default Zoom</prettyName>
         <size>30</size>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
@@ -69,12 +83,12 @@
         <customDisplay/>
         <defaultValue/>
         <disabled>0</disabled>
-        <displayFormType>select</displayFormType>
+        <displayFormType>checkbox</displayFormType>
         <displayType/>
         <hint/>
         <name>includeCurrentLocation</name>
         <number>4</number>
-        <prettyName>includeCurrentLocation</prettyName>
+        <prettyName>Include Current Location</prettyName>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
@@ -84,12 +98,12 @@
         <customDisplay/>
         <defaultValue/>
         <disabled>0</disabled>
-        <displayFormType>select</displayFormType>
+        <displayFormType>checkbox</displayFormType>
         <displayType/>
         <hint/>
         <name>includeSearch</name>
         <number>3</number>
-        <prettyName>includeSearch</prettyName>
+        <prettyName>Include Search</prettyName>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
@@ -98,11 +112,11 @@
       <query>
         <customDisplay/>
         <disabled>0</disabled>
-        <hint/>
+        <hint>Solr query that will get the data to be displayed on map</hint>
         <name>query</name>
         <number>5</number>
         <picker>0</picker>
-        <prettyName>query</prettyName>
+        <prettyName>Query</prettyName>
         <size>30</size>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
@@ -112,11 +126,11 @@
       <tiles>
         <customDisplay/>
         <disabled>0</disabled>
-        <hint/>
+        <hint>The background tiles</hint>
         <name>tiles</name>
         <number>2</number>
         <picker>0</picker>
-        <prettyName>tiles</prettyName>
+        <prettyName>Tiles</prettyName>
         <size>30</size>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
@@ -125,7 +139,10 @@
       </tiles>
     </class>
     <property>
-      <defaultZoom>13</defaultZoom>
+      <defaultLocation/>
+    </property>
+    <property>
+      <defaultZoom/>
     </property>
     <property>
       <includeCurrentLocation>1</includeCurrentLocation>
@@ -134,7 +151,7 @@
       <includeSearch>1</includeSearch>
     </property>
     <property>
-      <query/>
+      <query>object:Maps.Code.Point.PointClass</query>
     </property>
     <property>
       <tiles/>
