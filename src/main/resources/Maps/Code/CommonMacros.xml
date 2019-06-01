@@ -48,7 +48,7 @@
   #set ($discard = $query.bindValue('fq', '{!q.op=AND} type:DOCUMENT'))
   #set ($searchResponse = $query.execute()[0])
   #set ($mapDataArr = [])
-  #foreach ($response in $searchResponse.response.response)
+  #foreach ($response in $searchResponse.getResults())
     #set ($responseData = {})
     #set ($popupContent = "#getHtml($response.get('doccontentraw_'))")
     #set ($location = $response.get('property.Maps.Code.Point.PointClass.location_string')[0])

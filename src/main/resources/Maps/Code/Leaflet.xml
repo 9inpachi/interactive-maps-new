@@ -483,9 +483,17 @@ require(['jquery', 'leaflet', 'leafletSearch', 'leaflet-commons'], function ($, 
       var options = JSON.parse(element.dataset.options);
       var map = leafletCommons.createEmptyMap(options);
       var mapData = JSON.parse(element.dataset.mapdata);
+      var allLayers = L.featureGroup();
+      var dataLength = mapData.length - 1;
+      var i = 0;
       mapData.each(function (data) {
         leafletCommons.getLocationCoords(data.location, function (location) {
-          L.marker(location).bindPopup(data.popupContent).addTo(map);
+          allLayers.addLayer(L.marker(location).bindPopup(data.popupContent));
+          if(dataLength == i){
+            allLayers.addTo(map);
+            map.fitBounds(allLayers.getBounds());
+          }
+          i++;
         });
       });
     });

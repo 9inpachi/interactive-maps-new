@@ -145,13 +145,13 @@
       <defaultZoom/>
     </property>
     <property>
-      <includeCurrentLocation>1</includeCurrentLocation>
+      <includeCurrentLocation>0</includeCurrentLocation>
     </property>
     <property>
       <includeSearch>1</includeSearch>
     </property>
     <property>
-      <query>doc.space = "Points" AND object:Maps.Code.Point.PointClass</query>
+      <query>object:Maps.Code.Point.PointClass</query>
     </property>
     <property>
       <tiles/>
