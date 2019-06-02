@@ -488,7 +488,17 @@ require(['jquery', 'leaflet', 'leafletSearch', 'leaflet-commons'], function ($, 
       var i = 0;
       mapData.each(function (data) {
         leafletCommons.getLocationCoords(data.location, function (location) {
-          allLayers.addLayer(L.marker(location).bindPopup(data.popupContent));
+          var marker;
+          if(data.markerIcon){
+            var icon = L.icon({
+              iconUrl: data.markerIcon,
+              iconSize: [38, 'auto']
+            });
+            marker = L.marker(location, {icon: icon}).bindPopup(data.popupContent)
+          } else {
+            marker = L.marker(location).bindPopup(data.popupContent)
+          }
+          allLayers.addLayer(marker);
           if(dataLength == i){
             allLayers.addTo(map);
             map.fitBounds(allLayers.getBounds());

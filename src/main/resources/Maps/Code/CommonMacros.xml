@@ -50,10 +50,21 @@
   #set ($mapDataArr = [])
   #foreach ($response in $searchResponse.getResults())
     #set ($responseData = {})
+    ## Get document content as html
     #set ($popupContent = "#getHtml($response.get('doccontentraw_'))")
+    ## Get the location
     #set ($location = $response.get('property.Maps.Code.Point.PointClass.location_string')[0])
+    ## Set the location and popup information
     #set ($discard = $responseData.put('location', $location))
     #set ($discard = $responseData.put('popupContent', $popupContent))
+    ## Get attachment URL for marker icon if attachment available
+    #set ($targetDoc = $xwiki.getDocument($response.get('fullname')))
+    #set ($firstAttachment = $targetDoc.getAttachmentList())
+    #if (!$firstAttachment.isEmpty())
+      #set ($attachmentURL = $targetDoc.getAttachmentURL($firstAttachment.get(0).getFilename()))
+      #set ($discard = $responseData.put('markerIcon', $attachmentURL))
+    #end
+    ## Add the collected data into array
     #set ($discard = $mapDataArr.add($responseData))
   #end
   #set ($mapData = $jsontool.serialize($mapDataArr))
