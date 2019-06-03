@@ -186,7 +186,7 @@ Main page for Interactive Maps Application.
       <name>platform.panels.InteractiveMapsApplication</name>
     </property>
     <property>
-      <parameters>label=Interactive Maps (New)
+      <parameters>label=Interactive Maps
 target=Maps.WebHome
 icon=icon:map</parameters>
     </property>
