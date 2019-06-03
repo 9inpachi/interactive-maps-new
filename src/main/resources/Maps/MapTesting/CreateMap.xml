@@ -20,26 +20,26 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Maps.Code.Point.WebHome" locale="">
-  <web>Maps.Code.Point</web>
-  <name>WebHome</name>
+<xwikidoc version="1.3" reference="Maps.MapTesting.CreateMap" locale="">
+  <web>Maps.MapTesting</web>
+  <name>CreateMap</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <parent>Main.WebHome</parent>
+  <parent>WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>Point</title>
+  <title>Create Map</title>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>true</hidden>
+  <hidden>false</hidden>
   <content>{{velocity}}
-#if("$!request.pointName" != '')
+#if("$!request.mapName" != '')
   ## Request for creating a new instance
-  #set($docName = ${request.pointName})
+  #set($docName = ${request.mapName})
   #set($targetDocName = "${request.spaceName}.${docName}")
   #if(!$xwiki.exists($targetDocName) &amp;&amp; $xwiki.hasAccessLevel('edit', $xcontext.user, $targetDocName))
     $response.sendRedirect($xwiki.getURL($targetDocName, 'edit', "template=${escapetool.url($request.template)}&amp;parent=${escapetool.url($request.parent)}"))
@@ -57,12 +57,13 @@
 {{html}}
   &lt;form action="" id="newdoc" class="xformInline" method="post"&gt;
     &lt;input type="hidden" name="parent" value="${doc.fullName}"/&gt;
-    &lt;input type="hidden" name="template" value="Maps.Code.Point.PointClass"/&gt;
+    &lt;input type="hidden" name="template" value="Maps.Code.Map.MapTemplate"/&gt;
     &lt;input type="hidden" name="sheet" value="1"/&gt;
-    &lt;input type="hidden" name="spaceName" value="Maps.MapTesting.Points"/&gt;
-    &lt;label for="pointName"&gt;Point&lt;/label&gt;
-    &lt;input type="text" id="mapName" name="pointName" value="Enter the point name" class="withTip" size="50"/&gt;
-    &lt;input type="submit" value="Create Point" class="btn btn-primary"/&gt;
+    &lt;input type="hidden" name="spaceName" value="Maps.MapTesting.Maps"/&gt;
+    &lt;label for="mapName"&gt;Map&lt;/label&gt;
+    &lt;input type="text" id="mapName" name="mapName" value="Enter the map name" class="withTip" size="50"/&gt;
+    &lt;input type="submit" value="Create Map" class="btn btn-primary"/&gt;
   &lt;/form&gt;
-{{/html}}</content>
+{{/html}}
+{{/velocity}}</content>
 </xwikidoc>

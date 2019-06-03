@@ -20,9 +20,9 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Maps.Code.Point.PointClass" locale="">
-  <web>Maps.Code.Point</web>
-  <name>PointClass</name>
+<xwikidoc version="1.3" reference="Maps.Code.MapClass" locale="">
+  <web>Maps.Code</web>
+  <name>MapClass</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
@@ -31,7 +31,7 @@
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>PointClass</title>
+  <title/>
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
@@ -44,7 +44,7 @@
 #set ($defaultParent = 'Maps.WebHome')
 {{/velocity}}</content>
   <class>
-    <name>Maps.Code.Point.PointClass</name>
+    <name>Maps.Code.MapClass</name>
     <customClass/>
     <customMapping/>
     <defaultViewSheet/>
@@ -52,26 +52,101 @@
     <defaultWeb/>
     <nameField/>
     <validationScript/>
-    <location>
+    <defaultLocation>
       <customDisplay/>
       <disabled>0</disabled>
-      <hint>Location in coordinates or place name</hint>
-      <name>location</name>
-      <number>1</number>
+      <hint>Location to which the map will open to</hint>
+      <name>defaultLocation</name>
+      <number>6</number>
       <picker>0</picker>
-      <prettyName>Location</prettyName>
+      <prettyName>Default Location</prettyName>
       <size>30</size>
       <unmodifiable>0</unmodifiable>
       <validationMessage/>
       <validationRegExp/>
       <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-    </location>
+    </defaultLocation>
+    <defaultZoom>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <hint>The zoom which the map will open to</hint>
+      <name>defaultZoom</name>
+      <number>1</number>
+      <numberType>integer</numberType>
+      <prettyName>Default Zoom</prettyName>
+      <size>30</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+    </defaultZoom>
+    <includeCurrentLocation>
+      <customDisplay/>
+      <defaultValue/>
+      <disabled>0</disabled>
+      <displayFormType>checkbox</displayFormType>
+      <displayType/>
+      <hint/>
+      <name>includeCurrentLocation</name>
+      <number>4</number>
+      <prettyName>Include Current Location</prettyName>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+    </includeCurrentLocation>
+    <includeSearch>
+      <customDisplay/>
+      <defaultValue/>
+      <disabled>0</disabled>
+      <displayFormType>checkbox</displayFormType>
+      <displayType/>
+      <hint/>
+      <name>includeSearch</name>
+      <number>3</number>
+      <prettyName>Include Search</prettyName>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+    </includeSearch>
+    <query>
+      <contenttype>PureText</contenttype>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <editor>Text</editor>
+      <hint>Solr query to get data for the map</hint>
+      <name>query</name>
+      <number>6</number>
+      <picker>0</picker>
+      <prettyName>Query</prettyName>
+      <rows>5</rows>
+      <size>40</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+    </query>
+    <tiles>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <hint>The background tiles</hint>
+      <name>tiles</name>
+      <number>2</number>
+      <picker>0</picker>
+      <prettyName>Tiles</prettyName>
+      <size>30</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+    </tiles>
   </class>
   <object>
-    <name>Maps.Code.Point.PointClass</name>
+    <name>Maps.Code.MapClass</name>
     <number>0</number>
     <className>XWiki.ClassSheetBinding</className>
-    <guid>cb91290d-df32-4f36-a59b-94cc555a37a6</guid>
+    <guid>5ac52a15-8b54-494a-9216-b7ea5a06ac21</guid>
     <class>
       <name>XWiki.ClassSheetBinding</name>
       <customClass/>
@@ -108,14 +183,14 @@
       </sheet>
     </class>
     <property>
-      <sheet>PointSheet</sheet>
+      <sheet>MapSheet</sheet>
     </property>
   </object>
   <object>
-    <name>Maps.Code.Point.PointClass</name>
+    <name>Maps.Code.MapClass</name>
     <number>0</number>
     <className>XWiki.DocumentSheetBinding</className>
-    <guid>3df4dc1f-f2fb-4f2c-95b4-d7e9252e3afe</guid>
+    <guid>06e4d700-47c6-4fc8-8881-9d938b0b307e</guid>
     <class>
       <name>XWiki.DocumentSheetBinding</name>
       <customClass/>

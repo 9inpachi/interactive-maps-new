@@ -52,10 +52,10 @@ Some testing</content>
   <object>
     <name>Maps.MapTesting.Points.Islamabad.WebHome</name>
     <number>0</number>
-    <className>Maps.Code.Point.PointClass</className>
-    <guid>14b01bbf-ebf2-4906-902e-9186d440b410</guid>
+    <className>Maps.Code.PointClass</className>
+    <guid>fc0d2884-6571-47b0-a021-903317e0abdc</guid>
     <class>
-      <name>Maps.Code.Point.PointClass</name>
+      <name>Maps.Code.PointClass</name>
       <customClass/>
       <customMapping/>
       <defaultViewSheet/>

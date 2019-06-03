@@ -27,7 +27,7 @@
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <parent>xwiki:Maps.Code.Map.MapClass</parent>
+  <parent>xwiki:Maps.Code.MapClass</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
@@ -489,14 +489,15 @@ require(['jquery', 'leaflet', 'leafletSearch', 'leaflet-commons'], function ($, 
       mapData.each(function (data) {
         leafletCommons.getLocationCoords(data.location, function (location) {
           var marker;
-          if(data.markerIcon){
+          var popupData = '&lt;h2&gt;' + data.title + '&lt;/h2&gt;' + data.popupContent;
+          if (data.markerIcon) {
             var icon = L.icon({
               iconUrl: data.markerIcon,
-              iconSize: [38, 'auto']
+              iconSize: ['', 41]
             });
-            marker = L.marker(location, {icon: icon}).bindPopup(data.popupContent)
+            marker = L.marker(location, {icon: icon}).bindPopup(popupData);
           } else {
-            marker = L.marker(location).bindPopup(data.popupContent)
+            marker = L.marker(location).bindPopup(popupData);
           }
           allLayers.addLayer(marker);
           if(dataLength == i){

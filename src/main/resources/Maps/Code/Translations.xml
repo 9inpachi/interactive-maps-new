@@ -20,34 +20,32 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Maps.MapTesting.Points.ParisMarker" locale="">
-  <web>Maps.MapTesting.Points</web>
-  <name>ParisMarker</name>
+<xwikidoc version="1.3" reference="Maps.Code.Translations" locale="">
+  <web>Maps.Code</web>
+  <name>Translations</name>
   <language/>
-  <defaultLanguage/>
+  <defaultLanguage>en</defaultLanguage>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <parent>Maps.MapTesting.Points.Islamabad.WebHome</parent>
+  <parent>Maps.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
-  <title>ParisMarker</title>
+  <title>Translations</title>
+  <comment/>
   <minorEdit>false</minorEdit>
-  <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
-  <content>===== Some Data =====
-
-(% class="box warningmessage" %)
-(((
-Some information here
-)))</content>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content>maps.livetable.doc.title=Map Name
+maps.livetable.doc.creationDate=Date Created
+maps.livetable._actions=Edit/Delete</content>
   <object>
-    <name>Maps.MapTesting.Points.ParisMarker</name>
+    <name>Maps.Code.Translations</name>
     <number>0</number>
-    <className>Maps.Code.PointClass</className>
-    <guid>ad8eb2af-0100-4d90-8c50-b9d6f8d073c3</guid>
+    <className>XWiki.TranslationDocumentClass</className>
+    <guid>9a5b5a37-0b17-4b0f-a163-3316b22df1db</guid>
     <class>
-      <name>Maps.Code.PointClass</name>
+      <name>XWiki.TranslationDocumentClass</name>
       <customClass/>
       <customMapping/>
       <defaultViewSheet/>
@@ -55,23 +53,25 @@ Some information here
       <defaultWeb/>
       <nameField/>
       <validationScript/>
-      <location>
-        <customDisplay/>
+      <scope>
+        <cache>0</cache>
         <disabled>0</disabled>
-        <hint>Location in coordinates or place name</hint>
-        <name>location</name>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>scope</name>
         <number>1</number>
-        <picker>0</picker>
-        <prettyName>Location</prettyName>
-        <size>30</size>
+        <prettyName>Scope</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
         <unmodifiable>0</unmodifiable>
-        <validationMessage/>
-        <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
-      </location>
+        <values>GLOBAL|WIKI|USER|ON_DEMAND</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </scope>
     </class>
     <property>
-      <location>paris</location>
+      <scope>WIKI</scope>
     </property>
   </object>
 </xwikidoc>

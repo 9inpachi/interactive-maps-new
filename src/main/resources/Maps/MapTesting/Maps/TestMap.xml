@@ -27,7 +27,7 @@
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <parent>Maps.Code.Map.WebHome</parent>
+  <parent>xwiki:Maps.MapTesting.CreateMap</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
@@ -40,10 +40,10 @@
   <object>
     <name>Maps.MapTesting.Maps.TestMap</name>
     <number>0</number>
-    <className>Maps.Code.Map.MapClass</className>
-    <guid>8a062640-0790-44d9-aa10-9984d923dcd6</guid>
+    <className>Maps.Code.MapClass</className>
+    <guid>8e1ede4f-4dd4-4af7-862c-64f2a33c681b</guid>
     <class>
-      <name>Maps.Code.Map.MapClass</name>
+      <name>Maps.Code.MapClass</name>
       <customClass/>
       <customMapping/>
       <defaultViewSheet/>
@@ -71,7 +71,7 @@
         <hint>The zoom which the map will open to</hint>
         <name>defaultZoom</name>
         <number>1</number>
-        <numberType>long</numberType>
+        <numberType>integer</numberType>
         <prettyName>Default Zoom</prettyName>
         <size>30</size>
         <unmodifiable>0</unmodifiable>
@@ -110,18 +110,21 @@
         <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
       </includeSearch>
       <query>
+        <contenttype>PureText</contenttype>
         <customDisplay/>
         <disabled>0</disabled>
-        <hint>Solr query that will get the data to be displayed on map</hint>
+        <editor>Text</editor>
+        <hint>Solr query to get data for the map</hint>
         <name>query</name>
-        <number>5</number>
+        <number>6</number>
         <picker>0</picker>
         <prettyName>Query</prettyName>
-        <size>30</size>
+        <rows>5</rows>
+        <size>40</size>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
       </query>
       <tiles>
         <customDisplay/>
@@ -151,7 +154,7 @@
       <includeSearch>1</includeSearch>
     </property>
     <property>
-      <query>object:Maps.Code.Point.PointClass</query>
+      <query>object:Maps.Code.PointClass</query>
     </property>
     <property>
       <tiles/>

@@ -39,7 +39,22 @@
   <content>(% class="box infomessage" %)
 (((
 Main page for Interactive Maps Application.
-)))</content>
+)))
+=== Maps Created ===
+{{velocity}}
+#set($columns = ["doc.title", "doc.creationDate", "_actions"])
+#set($columnsProperties = {
+    "doc.title" : { "type" : "text", "link" : "view", "html" : "true", "sortable":true },
+    "_actions" : {"actions": ["edit","delete"]}
+})
+#set($options = {
+   "className":"Maps.Code.MapClass",
+   "translationPrefix" : "maps.livetable.",
+   "tagCloud" : true,
+   "rowCount": 10
+})
+#livetable("mapTable" $columns $columnsProperties $options)
+{{/velocity}}</content>
   <object>
     <name>Maps.WebHome</name>
     <number>0</number>

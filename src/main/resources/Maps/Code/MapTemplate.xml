@@ -20,14 +20,14 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Maps.Code.Map.MapTemplate" locale="">
-  <web>Maps.Code.Map</web>
+<xwikidoc version="1.3" reference="Maps.Code.MapTemplate" locale="">
+  <web>Maps.Code</web>
   <name>MapTemplate</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <parent>Maps.Code.Map.MapClass</parent>
+  <parent>WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <version>1.1</version>
@@ -38,12 +38,12 @@
   <hidden>true</hidden>
   <content/>
   <object>
-    <name>Maps.Code.Map.MapTemplate</name>
+    <name>Maps.Code.MapTemplate</name>
     <number>0</number>
-    <className>Maps.Code.Map.MapClass</className>
-    <guid>cfdcdc42-2451-49b1-aeea-8ac8f2b9f427</guid>
+    <className>Maps.Code.MapClass</className>
+    <guid>3a1935f7-dbf3-41ee-85c4-127325372935</guid>
     <class>
-      <name>Maps.Code.Map.MapClass</name>
+      <name>Maps.Code.MapClass</name>
       <customClass/>
       <customMapping/>
       <defaultViewSheet/>
@@ -71,7 +71,7 @@
         <hint>The zoom which the map will open to</hint>
         <name>defaultZoom</name>
         <number>1</number>
-        <numberType>long</numberType>
+        <numberType>integer</numberType>
         <prettyName>Default Zoom</prettyName>
         <size>30</size>
         <unmodifiable>0</unmodifiable>
@@ -110,18 +110,21 @@
         <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
       </includeSearch>
       <query>
+        <contenttype>PureText</contenttype>
         <customDisplay/>
         <disabled>0</disabled>
-        <hint>Solr query that will get the data to be displayed on map</hint>
+        <editor>Text</editor>
+        <hint>Solr query to get data for the map</hint>
         <name>query</name>
-        <number>5</number>
+        <number>6</number>
         <picker>0</picker>
         <prettyName>Query</prettyName>
-        <size>30</size>
+        <rows>5</rows>
+        <size>40</size>
         <unmodifiable>0</unmodifiable>
         <validationMessage/>
         <validationRegExp/>
-        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
       </query>
       <tiles>
         <customDisplay/>
@@ -139,22 +142,22 @@
       </tiles>
     </class>
     <property>
-      <defaultLocation/>
+      <defaultLocation>Paris</defaultLocation>
     </property>
     <property>
-      <defaultZoom/>
+      <defaultZoom>14</defaultZoom>
     </property>
     <property>
-      <includeCurrentLocation/>
+      <includeCurrentLocation>0</includeCurrentLocation>
     </property>
     <property>
-      <includeSearch/>
+      <includeSearch>1</includeSearch>
     </property>
     <property>
       <query/>
     </property>
     <property>
-      <tiles/>
+      <tiles>https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</tiles>
     </property>
   </object>
 </xwikidoc>
